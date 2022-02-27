@@ -6,6 +6,7 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 7000;
 const categoryRouter = require("./routes/categoryRouter")
+const productRouter = require("./routes/productRouter")
 
 
 // Middleware  
@@ -39,7 +40,11 @@ app.get('/', (req, res) => {
 
 });
 
+// Main Category Route
 app.use('/categories', categoryRouter);
+
+// Product Details Route
+app.use('/products', productRouter);
 
 
 
