@@ -6,7 +6,7 @@ let productDetailsSchema = new mongoose.Schema({
     },
 
     ProductPhoto: {
-        type: String,
+        type: Array,
         required: true
     },
 
