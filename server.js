@@ -7,6 +7,7 @@ const app = express();
 const port = process.env.PORT || 7000;
 const categoryRouter = require("./routes/categoryRouter")
 const productRouter = require("./routes/productRouter")
+const departmentRouter = require("./routes/departmentRouter")
 
 
 // Middleware  
@@ -45,6 +46,9 @@ app.use('/categories', categoryRouter);
 
 // Product Details Route
 app.use('/products', productRouter);
+
+// Department Details Route
+app.use('/departments', departmentRouter);
 
 
 
