@@ -11,9 +11,9 @@ router.get('/', async (req, res) => {
         const startIndex = (pageNumber * pageSize);
         const totalProductCount = await ProductDetailsCollection.countDocuments({});
         if (pageNumber >= 0) {
-            const cursor = ProductDetailsCollection.find({}).skip(startIndex).limit(pageSize).sort({ _id: -1 });
+            const cursor = ProductDetailsCollection.find({}).sort({ _id: -1 }).skip(startIndex).limit(pageSize);
             const Product = await cursor;
-            res.send(Product);
+            res.send({ Product: Product, totalProductCount: totalProductCount });
         }
         else {
             const cursor = ProductDetailsCollection.find({});
