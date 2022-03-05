@@ -26,4 +26,14 @@ router.get('/', async (req, res) => {
     }
 })
 
+// single product details find 
+router.get('/:id', async (req, res) => {
+
+    const id = req.params.id;
+    if (id) {
+        const cursor = ProductDetailsCollection.findOne({ _id: id });
+        const Product = await cursor;
+        res.send({ SingleProduct: Product });
+    }
+})
 module.exports = router;
