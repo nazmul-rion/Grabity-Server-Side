@@ -9,6 +9,9 @@ const categoryRouter = require("./routes/categoryRouter")
 const productRouter = require("./routes/productRouter")
 const departmentRouter = require("./routes/departmentRouter")
 const ReviewRouter = require("./routes/ReviewRouter")
+const ProductQuestionRouter = require("./routes/ProductQuestionRouter")
+const ProductAnswerRouter = require("./routes/ProductAnswerRouter")
+const ProductAnswerReplyRouter = require("./routes/ProductAnswerReplyRouter")
 
 
 // Middleware  
@@ -53,6 +56,14 @@ app.use('/departments', departmentRouter);
 
 // Review Details Route
 app.use('/reviews', ReviewRouter);
+
+// Product Questions Route
+app.use('/questions', ProductQuestionRouter);
+
+// Product Answers Route
+app.use('/answers', ProductAnswerRouter);
+// Product Answers Route
+app.use('/answer-replaies', ProductAnswerReplyRouter);
 
 
 

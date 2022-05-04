@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-let ReviewDetailsSchema = new mongoose.Schema({
-    ProductId: {
+let ProductAnswerReplyCollectionSchema = new mongoose.Schema({
+    AnswerId: {
         type: String,
         required: true
     },
@@ -11,30 +11,18 @@ let ReviewDetailsSchema = new mongoose.Schema({
     },
 
 
-    CustomerName: {
+    UserName: {
         type: String,
         required: true
     },
 
 
-    CustomerPhotoUrl: {
+    UserPhotoUrl: {
         type: String
     },
 
-    Title: {
+    Reply: {
         type: String,
-        required: true
-    },
-
-
-    Details: {
-        type: String,
-        required: true
-    },
-
-
-    Rating: {
-        type: Number,
         required: true
     },
 
@@ -43,12 +31,12 @@ let ReviewDetailsSchema = new mongoose.Schema({
         required: true,
         default: []
     },
+
     DownVote: {
         type: Array,
         required: true,
         default: []
     },
-
 
     Dates: {
         type: Number,
@@ -57,7 +45,7 @@ let ReviewDetailsSchema = new mongoose.Schema({
     }
 
 }, {
-    collection: "ReviewsDetails"
+    collection: "ProductAnswerReplyCollection"
 })
 
-module.exports = mongoose.model("ReviewsDetails", ReviewDetailsSchema);
+module.exports = mongoose.model("ProductAnswerReplyCollection", ProductAnswerReplyCollectionSchema);
